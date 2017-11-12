@@ -23,6 +23,15 @@ public class cucumberJava {
    @When("^I open Facebook website$") 
    public void goToFacebook() { 
       driver.navigate().to("https://www.facebook.com/"); 
+     // WebDriver driver=new FirefoxDriver();
+      File src= ((TakesScreenshot)driver). getScreenshotAs(OutputType. FILE);
+      try {
+      FileUtils.copyFile(src, new File("C:/selenium/erroryy.png"));
+      }
+      catch (IOException e)
+      {
+    	  System.out.println("yyyerroyyy");
+      }
    } 
 	
    @Then("^Login button should exits$") 
